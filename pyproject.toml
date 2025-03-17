@@ -1,0 +1,47 @@
+[project]
+name = "metafont"
+version = "0.1.0"
+description = "Manipulate font metadata"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fonttools>=4.56.0",
+    "questionary>=2.1.0",
+    "rich>=13.9.4",
+    "ruff>=0.11.0",
+    "textual>=2.1.2",
+    "typer>=0.15.2",
+]
+
+[tool.ruff]
+indent-width = 2
+line-length = 80
+# Ruff supports a top-level `src` option in lieu of isort's `src_paths` setting.
+# All paths are relative to the project root, which is the directory containing
+# the pyproject.toml.
+src = ["Sources"]
+
+[tool.ruff.format]
+docstring-code-format = true
+indent-style = "tab"
+line-ending = "lf"
+
+[tool.ruff.lint]
+select = [
+	"E4",
+	"E7",
+	"E9",
+	"F",
+	"RUF",
+	"D",
+	"D213", # multi-line docstring summary should start at the second line
+	"D401", # require imperative mood for all docstrings
+]
+ignore = [
+	"D206", # docstrings are indented with tabs (due to formatter)
+	"D212", # multi-line docstring summary start with whitespace (due to `D213`)
+	"D417", # docstrings not required for every function parameter
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
