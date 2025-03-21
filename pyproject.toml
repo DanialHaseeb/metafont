@@ -5,6 +5,7 @@ description = "Manipulate font metadata"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "brotli>=1.1.0",
     "fonttools>=4.56.0",
     "questionary>=2.1.0",
     "rich>=13.9.4",
